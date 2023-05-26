@@ -16,6 +16,13 @@ const App = () => {
     );
   };
 
+  const stop = () => {};
+
+  const reset = () => {
+    setTimer(null);
+    setTime(0);
+  };
+
   useEffect(() => {
     return () => {
       if (timer) clearInterval(timer);
@@ -26,8 +33,8 @@ const App = () => {
     <Container>
       <Timer time={time} />
       <Button action={start}>start</Button>
-      <Button action={''}>stop</Button>
-      <Button action={''}>reset</Button>
+      <Button action={stop}>stop</Button>
+      <Button action={reset}>reset</Button>
     </Container>
   );
 };
