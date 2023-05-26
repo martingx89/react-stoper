@@ -16,7 +16,9 @@ const App = () => {
     );
   };
 
-  const stop = () => {};
+  const stop = () => {
+    setTimer(null);
+  };
 
   const reset = () => {
     setTimer(null);
