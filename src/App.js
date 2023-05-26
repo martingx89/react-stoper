@@ -8,10 +8,24 @@ const App = () => {
 
   const [timer, setTimer] = useState(null);
 
+  const start = () => {
+    setTimer(
+      setInterval(() => {
+        setTime((prevValue) => prevValue + 1);
+      }, 1)
+    );
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [timer]);
+
   return (
     <Container>
       <Timer time={time} />
-      <Button action={''}>start</Button>
+      <Button action={start}>start</Button>
       <Button action={''}>stop</Button>
       <Button action={''}>reset</Button>
     </Container>
