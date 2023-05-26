@@ -17,11 +17,11 @@ const App = () => {
   };
 
   const stop = () => {
-    setTimer(null);
+    clearInterval(timer);
   };
 
   const reset = () => {
-    setTimer(null);
+    clearInterval(timer);
     setTime(0);
   };
 
